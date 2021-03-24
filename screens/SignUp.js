@@ -66,20 +66,21 @@ const SignUp = ({navigation}) => {
 
 const styles = StyleSheet.create({
   BackView: {
-    flex: 1,
+    height: '100%',
     backgroundColor: '#1A232B',
     paddingVertical: 0,
   },
   top: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
-    width: 415,
+
+    minHeight: '25%',
+    width: '100%',
     backgroundColor: 'black',
-    marginBottom: 70,
+    marginBottom: 40,
   },
   bottom: {
-    flex: 3,
+    height: '75%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1A232B',
     padding: 10,
     height: 40,
-    width: 320,
+    width: '75%',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#1A232B',
