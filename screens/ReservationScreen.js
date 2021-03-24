@@ -5,15 +5,25 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
-const ReservationScreen = (navigation) => {
+const ReservationScreen = ({navigation}) => {
   return (
     <ScrollView style={styles.BackView}>
       <View style={{flex: 1, padding: 13}}>
-        <Text style={styles.text1}>İşlemler</Text>
+        <View style={{flexDirection: 'row'}}>
+          <Icon
+            onPress={() => navigation.navigate('MapScreen')}
+            name="arrow-left"
+            size={30}
+            color="#86949D"
+            style={{marginRight: '30%'}}
+          />
+          <Text style={styles.text1}>İşlemler</Text>
+        </View>
+
         <TouchableOpacity style={styles.islemler}>
           <Text style={styles.text2}>Telefon</Text>
         </TouchableOpacity>

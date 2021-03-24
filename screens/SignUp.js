@@ -59,6 +59,36 @@ const SignUp = ({navigation}) => {
             <Text style={styles.text2}>Zaten bir hesabınız var mı?</Text>
           </TouchableOpacity>
         </View>
+        <View style={styles.navbar}>
+          <TouchableOpacity
+            style={styles.Icons}
+            onPress={() => navigation.navigate('MapScreen')}>
+            <Icon name="location-arrow" size={30} color="#86949D" />
+            <Text style={{color: 'white'}}>Harita</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.Icons}
+            onPress={() => navigation.navigate('LoginScreen')}>
+            <Icon name="sign-in" size={30} color="#86949D" />
+            <Text style={{color: '#86949D'}}>Giriş</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.Icons}
+            onPress={() => navigation.navigate('SignUp')}>
+            <Icon name="user-plus" size={30} color="#0E68AD" />
+            <Text style={{color: '#86949D'}}>Kayıt</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.Icons}
+            onPress={() => navigation.navigate('ReservationScreen')}>
+            <Icon name="car" size={30} color="#86949D" />
+            <Text style={{color: '#86949D'}}>İşlemler</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.Icons}>
+            <Icon name="info" size={30} color="#86949D" />
+            <Text style={{color: '#86949D'}}>Hakkımızda</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -66,7 +96,7 @@ const SignUp = ({navigation}) => {
 
 const styles = StyleSheet.create({
   BackView: {
-    height: '100%',
+    flex: 1,
     backgroundColor: '#1A232B',
     paddingVertical: 0,
   },
@@ -74,15 +104,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
 
-    minHeight: '25%',
+    flex: 1,
     width: '100%',
     backgroundColor: 'black',
-    marginBottom: 40,
+    marginBottom: 20,
   },
   bottom: {
-    height: '75%',
+    flex: 3,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 10,
+  },
+  navbar: {
+    flex: 0.4,
+    flexDirection: 'row',
+  },
+  Icons: {
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#171818',
   },
   text3: {
     color: 'white',

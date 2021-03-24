@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import MapView from 'react-native-maps';
 import {Marker} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import SearchBar from 'react-native-search-bar';
 import ReservationScreen from './screens/ReservationScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -47,16 +47,18 @@ const MapScreen = ({navigation}) => {
       <SearchBar
         style={styles.bar}
         useRef="searchBar"
-        textFieldBackgroundColor="gray"
+        textFieldBackgroundColor="white"
         placeholder="Arama"
         textColor="white"
-        showsCancelButtonWhileEditing={true}
+        showsCancelButtonWhileEditing={false}
       />
       <MapView
+        showsScale={true}
+        showsMyLocationButton={true}
         showsTraffic={true}
         showsUserLocation={true}
         followsUserLocation={true}
-        showsMyLocationButton={true}
+        userLocationAnnotationTitle="you are here"
         customMapStyle={mapStyle}
         style={{flex: 1}}
       />
@@ -69,25 +71,30 @@ const MapScreen = ({navigation}) => {
           borderTopColor: 'white',
         }}>
         <TouchableOpacity style={styles.Icons}>
-          <Icon name="location-arrow" size={35} color="#0E68AD" />
+          <Icon name="location-arrow" size={30} color="#0E68AD" />
+          <Text style={{color: 'white'}}>Harita</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Icons}
           onPress={() => navigation.navigate('LoginScreen')}>
           <Icon name="sign-in" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>Giriş</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Icons}
           onPress={() => navigation.navigate('SignUp')}>
-          <Icon name="user-plus" size={25} color="#86949D" />
+          <Icon name="user-plus" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>Kayıt</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Icons}
           onPress={() => navigation.navigate('ReservationScreen')}>
-          <Icon name="car" size={25} color="#86949D" />
+          <Icon name="car" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>İşlemler</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.Icons}>
           <Icon name="info" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>Hakkımızda</Text>
         </TouchableOpacity>
       </View>
       {/* <Text style={styles.text1}>Menü</Text>
@@ -119,7 +126,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: '80%',
     alignSelf: 'center',
-    marginVertical: 4,
+    marginVertical: 5,
   },
   text1: {
     textAlign: 'center',

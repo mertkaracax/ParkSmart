@@ -14,12 +14,7 @@ import {
   Image,
 } from 'react-native';
 
-// import {
-//   widthPercentageToDP as wp,
-//   heightPercentageToDP as hp,
-// } from 'react-native-responsive-screen';
-
-const LoginScreen = (navigation) => {
+const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.BackView}>
       <View style={styles.top}>
@@ -40,6 +35,34 @@ const LoginScreen = (navigation) => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn2}>
           <Text style={styles.text2}>Şifremi Unuttum</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.navbar}>
+        <TouchableOpacity style={styles.Icons}>
+          <Icon name="location-arrow" size={30} color="#86949D" />
+          <Text style={{color: 'white'}}>Harita</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.Icons}
+          onPress={() => navigation.navigate('LoginScreen')}>
+          <Icon name="sign-in" size={30} color="#0E68AD" />
+          <Text style={{color: '#86949D'}}>Giriş</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.Icons}
+          onPress={() => navigation.navigate('SignUp')}>
+          <Icon name="user-plus" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>Kayıt</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.Icons}
+          onPress={() => navigation.navigate('ReservationScreen')}>
+          <Icon name="car" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>İşlemler</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.Icons}>
+          <Icon name="info" size={30} color="#86949D" />
+          <Text style={{color: '#86949D'}}>Hakkımızda</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -69,6 +92,19 @@ const styles = StyleSheet.create({
     flex: 3,
     paddingTop: 20,
     alignItems: 'center',
+  },
+  navbar: {
+    flex: 0.4,
+    flexDirection: 'row',
+  },
+  Icons: {
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#171818',
   },
   text1: {
     fontSize: 18,
